@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>BarLens</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>BarLens</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-
-        <!-- MENU BUTTON -->
-        <div class="menu-btn" onclick="openMenu()">&#9776;</div>
-
-        <!-- LOGO UTAMA -->
-        <img src="logo.png" class="logo">
-
-        <!-- LOGO CAMBAR -->
-        <img src="barcam.png" class="barcam">
-
-        <!-- LOGO BARLENS TEXT -->
-        <img src="barlens-text.png" class="title-img">
-    </header>
-
-    <!-- TAB -->
-    <div class="tabs">
-        <div class="tab" onclick="setTab('semua')">
-            <span id="dot-semua" class="dot">•</span> Semua
-        </div>
-        <div class="tab" onclick="setTab('camera')">
-            <span id="dot-camera" class="dot hidden">•</span> Camera
-        </div>
-        <div class="tab" onclick="setTab('game')">
-            <span id="dot-game" class="dot hidden">•</span> Game
-        </div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="menu-btn" onclick="openMenu()">&#9776;</div>
+    
+    <div class="logo-area">
+      <img src="logo.png" class="logo" alt="BarLens Logo">
+      <img src="barlens-text.png" class="title-img" alt="BarLens Text">
     </div>
+  </header>
 
-    <div class="line"></div>
+  <!-- TAB -->
+  <div class="tabs">
+    <div class="tab" onclick="setTab('semua')"><span id="dot-semua" class="dot">•</span> Semua</div>
+    <div class="tab" onclick="setTab('camera')"><span id="dot-camera" class="dot hidden">•</span> Camera</div>
+    <div class="tab" onclick="setTab('game')"><span id="dot-game" class="dot hidden">•</span> Game</div>
+  </div>
 
-    <!-- KONTEN -->
-    <div id="content" class="content">
-        <p class="center">Kembali Lain Waktu</p>
+  <div class="line"></div>
+
+  <!-- KONTEN -->
+  <div id="content" class="content">
+    <div class="item">
+      <img src="logo.png" alt="BarLens" class="app-icon">
+      <p>BarLens • Camera</p>
     </div>
-
-    <!-- FULL OVERLAY MENU -->
-    <div id="menu" class="menu-overlay">
-        <div class="menu-box">
-
-            <div class="close" onclick="closeMenu()">✕</div>
-
-            <p class="menu-info">Website Ini Belum Sepenuhnya 100%</p>
-            <p class="dev">Developer BaraSetiawan</p>
-
-        </div>
+    <div class="item">
+      <img src="barcam.png" alt="CamBar" class="app-icon">
+      <p>CamBar • Camera</p>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- OVERLAY MENU -->
+  <div id="menu" class="menu-overlay">
+    <div class="menu-box">
+      <div class="close" onclick="closeMenu()">✕</div>
+      <p class="menu-info">Website Ini Belum Sepenuhnya 100%</p>
+      <p class="dev">Developer BaraSetiawan</p>
+    </div>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
