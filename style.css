@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    background: white;
+    font-family: serif;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    background: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-btn {
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-info {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 200px;
+    color: #333;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+}
+
+.title-img {
+    height: 45px;
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    font-size: 24px;
+}
+
+.dot {
+    margin-right: 4px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.line {
+    height: 3px;
+    background: black;
+}
+
+/* KONTEN */
+.content {
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* MENU */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.menu-left {
+    width: 60%;
+    background: rgba(170,170,170,0.95);
+    padding: 15px;
+    position: relative;
+}
+
+.menu-right {
+    width: 40%;
+    background: rgba(0,0,0,0.4);
+}
+
+.close {
+    font-size: 33px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.overlay-title {
+    margin-top: 20px;
+    color: #444;
+}
+
+.menu-item {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.menu-img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.dev {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    color: white;
+    font-size: 18px;
+}

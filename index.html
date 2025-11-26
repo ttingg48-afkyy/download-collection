@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarLens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER HITAM -->
+    <header class="header">
+        <div class="menu-btn" onclick="openMenu()">&#9776;</div>
+
+        <!-- Gambar logo kamera -->
+        <img src="logo.png" class="logo">
+
+        <!-- Gambar tulisan BarLENS -->
+        <img src="barlens-text.png" class="title-img">
+    </header>
+
+    <!-- TAB -->
+    <div class="tabs">
+        <div class="tab" onclick="setTab('semua')">
+            <span id="dot-semua" class="dot">•</span> Semua
+        </div>
+        <div class="tab" onclick="setTab('camera')">
+            <span id="dot-camera" class="dot hidden">•</span> Camera
+        </div>
+        <div class="tab" onclick="setTab('game')">
+            <span id="dot-game" class="dot hidden">•</span> Game
+        </div>
+    </div>
+
+    <div class="line"></div>
+
+    <!-- MENU OVERLAY -->
+<div id="menu" class="menu-overlay">
+    <div class="menu-left">
+        <div class="close" onclick="closeMenu()">✕</div>
+
+        <p class="menu-info">Website Ini Belum Sepenuhnya 100%</p>
+        
+ <p class="dev">Developer BaraSetiawan</p>
+
+    </div>
+    <div class="menu-right"></div>
+</div>
+
+        <!-- BAGIAN KANAN TRANSPARAN -->
+        <div class="menu-right"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
