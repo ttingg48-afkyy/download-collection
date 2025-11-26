@@ -2,24 +2,25 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>BarLens</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER HITAM -->
+    <!-- HEADER -->
     <header class="header">
+
+        <!-- MENU BUTTON -->
         <div class="menu-btn" onclick="openMenu()">&#9776;</div>
 
-        <!-- Gambar logo kamera -->
+        <!-- LOGO UTAMA -->
         <img src="logo.png" class="logo">
-        
-        <!-- Gambar logo kamera -->
+
+        <!-- LOGO CAMBAR -->
         <img src="barcam.png" class="barcam">
-        
-        
-        <!-- Gambar tulisan BarLENS -->
+
+        <!-- LOGO BARLENS TEXT -->
         <img src="barlens-text.png" class="title-img">
     </header>
 
@@ -38,25 +39,24 @@
 
     <div class="line"></div>
 
-    <!-- ❗KONTEN (INI YANG KEMARIN HILANG) -->
+    <!-- KONTEN -->
     <div id="content" class="content">
         <p class="center">Kembali Lain Waktu</p>
     </div>
 
-    <!-- MENU OVERLAY -->
+    <!-- FULL OVERLAY MENU -->
     <div id="menu" class="menu-overlay">
-        <div class="menu-left">
+        <div class="menu-box">
+
             <div class="close" onclick="closeMenu()">✕</div>
 
             <p class="menu-info">Website Ini Belum Sepenuhnya 100%</p>
-
             <p class="dev">Developer BaraSetiawan</p>
-        </div>
 
-        <!-- BAGIAN KANAN TRANSPARAN -->
-        <div class="menu-right"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
