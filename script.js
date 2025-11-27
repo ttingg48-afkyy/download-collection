@@ -63,9 +63,9 @@ if (tab === "game") {
 // FUNGSI DOWNLOAD
 // ====================================
 function downloadBarlens() {
-window.location.href = "https://app.filemail.com/d/maauoezpvfmxpvr";
+window.location.href = "https://sfl.gl/DiKae";
 }
 
 function downloadBarcam() {
-window.location.href = "https://app.filemail.com/d/tflpqctvgsdurbn";
+window.location.href = "https://sfl.gl/cYYLk";
 }
