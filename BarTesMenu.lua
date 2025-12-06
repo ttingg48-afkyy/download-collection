@@ -1,34 +1,44 @@
---[[=========================================================
- UI BaraLeaks — FULL FIXED VERSION
-===========================================================]]
+--=========================================================
+--  BARALEAKS UI — FIXED MINIMIZE + FIXED HEADER IMAGE
+--=========================================================
 
 local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+
 local Main = Instance.new("Frame", ScreenGui)
 Main.Size = UDim2.new(0, 500, 0, 300)
-Main.Position = UDim2.new(0.2, 0, 0.25, 0)
+Main.Position = UDim2.new(0.25, 0, 0.25, 0)
 Main.BackgroundColor3 = Color3.fromRGB(35,35,35)
 Main.BorderSizePixel = 0
 Main.Active = true
 Main.Draggable = true
 
--- HEADER ---------------------------------------------------
+--======================= HEADER ===========================
+
 local Header = Instance.new("Frame", Main)
-Header.Size = UDim2.new(1, 0, 0, 40)
+Header.Size = UDim2.new(1, 0, 0, 50)
 Header.BackgroundColor3 = Color3.fromRGB(25,25,25)
 
+-- FOTO OWNER SAMPING TITLE
+local HeaderImg = Instance.new("ImageLabel", Header)
+HeaderImg.Size = UDim2.new(0, 40, 0, 40)
+HeaderImg.Position = UDim2.new(0, 5, 0, 5)
+HeaderImg.BackgroundTransparency = 1
+HeaderImg.Image = "rbxassetid://7229442422"
+
 local Title = Instance.new("TextLabel", Header)
-Title.Size = UDim2.new(1, -70, 1, 0)
-Title.Position = UDim2.new(0, 10, 0, 0)
+Title.Size = UDim2.new(1, -60, 1, 0)
+Title.Position = UDim2.new(0, 55, 0, 0)
 Title.BackgroundTransparency = 1
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 20
 Title.TextColor3 = Color3.fromRGB(230,230,230)
+Title.TextXAlignment = Enum.TextXAlignment.Left
 Title.Text = "BaraLeaks | Owner Tampan"
 
--- CLOSE BUTTON (X)
+-- CLOSE BUTTON
 local X = Instance.new("TextButton", Header)
-X.Size = UDim2.new(0, 30, 1, 0)
-X.Position = UDim2.new(1, -35, 0, 0)
+X.Size = UDim2.new(0, 35, 1, 0)
+X.Position = UDim2.new(1, -40, 0, 0)
 X.Text = "X"
 X.TextColor3 = Color3.fromRGB(255,255,255)
 X.BackgroundTransparency = 1
@@ -38,48 +48,58 @@ X.MouseButton1Click:Connect(function()
 	Main.Visible = false
 end)
 
--- MINIMIZE BUTTON (-)
+-- MINIMIZE BUTTON (REAL FIX)
 local Min = Instance.new("TextButton", Header)
-Min.Size = UDim2.new(0, 30, 1, 0)
-Min.Position = UDim2.new(1, -70, 0, 0)
+Min.Size = UDim2.new(0, 35, 1, 0)
+Min.Position = UDim2.new(1, -80, 0, 0)
 Min.Text = "-"
 Min.TextColor3 = Color3.fromRGB(255,255,255)
 Min.BackgroundTransparency = 1
 Min.Font = Enum.Font.GothamBold
 Min.TextSize = 24
 
+--======================= CONTENT WRAPPER =====================
+-- Biar minimize hanya hide frame ini (AMAN, GA FREEZE)
+
+local ContentWrapper = Instance.new("Frame", Main)
+ContentWrapper.Size = UDim2.new(1, 0, 1, -50)
+ContentWrapper.Position = UDim2.new(0, 0, 0, 50)
+ContentWrapper.BackgroundTransparency = 1
+
+local TableHolder = Instance.new("Frame", ContentWrapper)
+TableHolder.Size = UDim2.new(1, 0, 1, 0)
+TableHolder.BackgroundTransparency = 1
+
+local List = Instance.new("UIListLayout", TableHolder)
+List.SortOrder = Enum.SortOrder.LayoutOrder
+List.Padding = UDim.new(0, 2)
+
+-- MINIMIZE FIX (TIDAK MENYENTUH HEADER / LISTLAYOUT)
 local Minimized = false
 Min.MouseButton1Click:Connect(function()
 	Minimized = not Minimized
-	TableHolder.Visible = not Minimized
-	Main.Size = Minimized and UDim2.new(0, 500, 0, 40) or UDim2.new(0, 500, 0, 300)
+	
+	ContentWrapper.Visible = not Minimized
+	
+	Main.Size = Minimized
+		and UDim2.new(0, 500, 0, 50)
+		or  UDim2.new(0, 500, 0, 300)
 end)
 
--- TABLE CONTENT HOLDER -------------------------------------
-TableHolder = Instance.new("Frame", Main)
-TableHolder.Size = UDim2.new(1, 0, 1, -40)
-TableHolder.Position = UDim2.new(0, 0, 0, 40)
-TableHolder.BackgroundTransparency = 1
+--======================= DATA ===============================
 
-local UIListLayout = Instance.new("UIListLayout", TableHolder)
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 2)
-
--- FEATURE LIST DATA ----------------------------------------
 local Features = {
 	{
 		Title = "Info Owner",
 		Content = "Developer : Bara Tamvan\nTeam : BarLens Studio",
 		Image = "rbxassetid://7229442422"
 	},
-
-	{ Title = "Coming Soon", Content = "Segera Hadir", Image = "" },
-	{ Title = "Coming Soon", Content = "Segera Hadir", Image = "" },
 	{ Title = "Coming Soon", Content = "Segera Hadir", Image = "" },
 	{ Title = "Coming Soon", Content = "Segera Hadir", Image = "" },
 }
 
--- MAKE ROWS -------------------------------------------------
+--======================= ROW BUILDER =========================
+
 for _, data in ipairs(Features) do
 	
 	local Row = Instance.new("Frame", TableHolder)
@@ -105,7 +125,6 @@ for _, data in ipairs(Features) do
 	Toggle.TextColor3 = Color3.fromRGB(255,255,255)
 	Toggle.Text = "▼"
 
-	-- CONTENT PANEL
 	local Panel = Instance.new("Frame", Row)
 	Panel.Size = UDim2.new(1, 0, 0, 0)
 	Panel.BackgroundColor3 = Color3.fromRGB(40,40,40)
@@ -116,12 +135,12 @@ for _, data in ipairs(Features) do
 	Ptxt.Size = UDim2.new(1, -90, 1, 0)
 	Ptxt.Position = UDim2.new(0, 80, 0, 10)
 	Ptxt.BackgroundTransparency = 1
-	Ptxt.Text = data.Content
 	Ptxt.Font = Enum.Font.Gotham
 	Ptxt.TextColor3 = Color3.fromRGB(200,200,200)
 	Ptxt.TextSize = 16
 	Ptxt.TextXAlignment = Enum.TextXAlignment.Left
 	Ptxt.TextYAlignment = Enum.TextYAlignment.Top
+	Ptxt.Text = data.Content
 
 	if data.Image ~= "" then
 		local Img = Instance.new("ImageLabel", Panel)
@@ -131,11 +150,11 @@ for _, data in ipairs(Features) do
 		Img.Image = data.Image
 	end
 
-	-- EXPAND / COLLAPSE FIX
 	local Expanded = false
 	Toggle.MouseButton1Click:Connect(function()
 		Expanded = not Expanded
 		Panel.Visible = Expanded
+
 		Toggle.Text = Expanded and "▲" or "▼"
 
 		if Expanded then
